@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnyShare</title>
+    <link rel="shortcut icon" href="./assests/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="myTheme">
+    <div id="splash">
+        <div class="spinner">
+            <div class="spinnerin"></div>
+        </div>
+    </div>
+    
+    <div id="main">
+        <div class="alert danger-alert">
+            <p id="alert-text"></p>
+        </div>
+        <img src="./assests/arrow-left.svg" class="homeBtn">
+        <div class="themeSwitch" title="Switch Dark/Light Mode">
+            <img src="./assests/moon.svg" class="currentThemeIcon">
+        </div>
+        <!-- <div class="github" title="">
+           <a href="https://github.com/" target="_blank"> <img src="./assests/github-b.svg" class="githubIcon"></a>
+        </div> -->
+       
+        <div class="welcome">
+            <h2>AnyShare</h2>
+            <h4>Simple, end-to-end encryption file sharing</h4>
+        </div>
+        <div class="drag-area" id="uploadButton">
+            <div class="icon"><img src="./assests/upload.svg"></i></div>
+            <header>Drag & Drop to Upload File</header>
+            <p>OR</p>
+            <button class="browseBtn"><img src="./assests/search.svg">Browse File</button>
+            <input type="file" hidden multiple>
+            <div class="files">
+                <section class="progress-area"></section>
+                <section class="uploaded-area"></section>
+            </div>
+        </div>
+        <div class="showCode">
+            <h3>Share Your <span>Private Code</span> to Other to view and download uploaded files <span>Securely</span>
+            </h3>
+            <div class="input-field">
+                <input id="digitCode1" type="number" readonly
+                    onKeyDown="if(this.value.length==1 && event.keyCode!=8) return false;" />
+                <input id="digitCode2" type="number" readonly
+                    onKeyDown="if(this.value.length==1 && event.keyCode!=8) return false;" />
+                <input id="digitCode3" type="number" readonly
+                    onKeyDown="if(this.value.length==1 && event.keyCode!=8) return false;" />
+                <input id="digitCode4" type="number" readonly
+                    onKeyDown="if(this.value.length==1 && event.keyCode!=8) return false;" />
+            </div>
+        </div>
+        <div class="downloadWindow">
+            <div class="receive">
+                <form class="otc" action="#">
+                    <fieldset>
+                        <h3>Enter 4 Digit Code</h3>
+                        <div class="input-field">
+                            <input class="downloadcode focusme" autofocus type="number"
+                                onKeyDown="if(this.value.length==1 && event.keyCode!=8) return false;" />
+                            <input class="downloadcode" type="number" disabled
+                                onKeyDown="if(this.value.length==1 && event.keyCode!=8) return false;" />
+                            <input class="downloadcode" type="number" disabled
+                                onKeyDown="if(this.value.length==1 && event.keyCode!=8) return false;" />
+                            <input class="downloadcode" type="number" disabled
+                                onKeyDown="if(this.value.length==1 && event.keyCode!=8) return false;" />
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <section class="files-area"></section>
+        </div>
+        <div class="loader">
+            <span></span>
+        </div>
+        <div class="share">
+            <div class="btn sendBtn">
+                <img src="./assests/upload.svg">
+                <span class="sendBtnText">Send</span>
+            </div>
+            <div class="btn receiveBtn">
+                <img src="./assests/download.svg">
+                <span class="receiveBtnText">Receive</span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="./js/main.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-storage.js"></script>
+    <script src="./js/config.js"></script><!--remove this line-->
+    <script src="./js/fire.js"></script>
+</body>
+
+</html>
